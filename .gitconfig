@@ -1,0 +1,19 @@
+[user]
+	name = Sam Turner
+	email = 98767222+stmio@users.noreply.github.com
+	signingkey = 6BD4A754C549E944
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
