@@ -4,6 +4,7 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+config.enable_wayland = false
 config.enable_tab_bar = false
 config.color_scheme = "Tokyo Night"
 -- config.color_scheme = 'OneDark (base16)'
