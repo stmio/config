@@ -152,3 +152,6 @@ export LD_LIBRARY_PATH=${CUDNN_PATH}/lib:${TENSORRT_PATH}/:${TENSORRT_LIB_PATH}/
 export PATH="$HOME/.local/bin:$PATH"
 export MYVIMRC="/home/sam/.config/nvim/init.lua"
 
+# Starship prompt
+eval "$(starship init bash)"
+

@@ -5,9 +5,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.enable_wayland = false
-config.enable_tab_bar = false
-config.color_scheme = "Tokyo Night"
--- config.color_scheme = 'OneDark (base16)'
+config.enable_scroll_bar = false
+
+config.enable_tab_bar = true
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+
+config.color_scheme = "Tokyo Night" -- "OneDark (base16)"
 
 config.window_padding = {
 	left = 5,
