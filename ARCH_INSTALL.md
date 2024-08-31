@@ -109,9 +109,9 @@ Enroll the TPM:
 ```
 # Root partition
 systemd-cryptenroll /dev/nvme0n1p2 --recovery-key
-systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7+8+11
+systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7
 
 # Home partition
 systemd-cryptenroll /dev/nvme1n1p1 --recovery-key
-systemd-cryptenroll /dev/nvme1n1p1 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7+8+11
+systemd-cryptenroll /dev/nvme1n1p1 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7
 ```
