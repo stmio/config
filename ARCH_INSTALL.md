@@ -115,3 +115,22 @@ systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=empty --tpm2-device=auto --tpm2-w
 systemd-cryptenroll /dev/nvme1n1p1 --recovery-key
 systemd-cryptenroll /dev/nvme1n1p1 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7
 ```
+
+Unlock and mount home partition on boot (not automounted by systemd as on different drive) with `fstab` and `crypttab`:
+
+```
+# /etc/crypttab
+home UUID=<UUID of partition> none tpm2-device=auto
+
+# /etc/fstab
+/dev/mapper/home /home btrfs defaults,compress=zstd 0 0
+```
+
+Reboot, then setup personal user account:
+
+```
+useradd -m -G wheel -s /usr/bin/zsh sam
+passwd sam
+```
+
+Configure permissions so that the wheel group can use [`sudo`](https://wiki.archlinux.org/title/Sudo#Example_entries) and [`su`](https://wiki.archlinux.org/title/Su#su_and_wheel) but only with a password. 
