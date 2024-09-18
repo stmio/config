@@ -116,6 +116,10 @@ systemd-cryptenroll /dev/nvme1n1p1 --recovery-key
 systemd-cryptenroll /dev/nvme1n1p1 --wipe-slot=empty --tpm2-device=auto --tpm2-with-pin=yes --tpm2-pcrs=0+7
 ```
 
+> [!NOTE]  
+> The home partition can also be unlocked automatically with a keyfile stored on the encrypted root partition.
+> In this case, skip the last command in the block above and see [this wiki page](https://wiki.archlinux.org/title/Dm-crypt/System_configuration#Unlocking_with_a_keyfile).
+
 Unlock and mount home partition on boot (not automounted by systemd as on different drive) with `fstab` and `crypttab`:
 
 ```
